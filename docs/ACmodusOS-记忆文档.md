@@ -54,6 +54,11 @@
 5. **网络**:全靠SOCKS5 127.0.0.1:7897;git全局10809死(勿改全局,命令级`-c http.proxy=socks5://127.0.0.1:7897`);魔搭国内直连不用代理;**terminal工具偶发WSL报错崩**(报WSL_E_LOCAL_SYSTEM_NOT_SUPPORTED),用execute_code兜底
 6. **Pinterest匿名限额**:每词约6pin。风格参考够用,训练数据不够——主力=VITON-HD 13k对;更多Pinterest需登录态cookie(未做)
 
+## 3.5 端侧体积总红线(2026-09-17语音指令)
+- App安装总占用≤1GB红线/≤600MB目标;运行内存≤3GB;用户数据+缓存≤1.5GB自动封顶
+- 六模块预算:VTON350/换脸80/3D基底80/化妆30/测量15/穿搭15/抠图10/预留20(MB)
+- 衣服3D资产按需下载不打包;生成图LRU 500MB;详见 B:\mode\端侧体积红线v2.1-六模块版.md
+
 ## 四、下一步(自主推进)
 1. 魔搭拉VITON-HD-Captions(5.58GB)+Qwen-Image-Edit(**唯一等用户的点:魔搭手机号注册**)
 2. M2 smoke test:10对样本500步(魔搭A10;或本机换小底模SD1.5先验管线)
