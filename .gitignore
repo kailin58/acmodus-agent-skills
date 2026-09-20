@@ -1,0 +1,4 @@
+
+.secrets/
+*.txt.token
+**/modelscope_token*
