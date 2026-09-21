@@ -71,7 +71,7 @@ def main():
                 print(msg); log.write(msg+"\n"); log.flush()
             if step >= STEPS: break
     unet_l.save_pretrained(OUT)
-    msg = f"LORA_SAVED {OUT}"
+    msg = f"ADAPTER_SAVED {OUT}"
     print(msg); log.write(msg+"\n"); log.close()
 
 if __name__ == "__main__":

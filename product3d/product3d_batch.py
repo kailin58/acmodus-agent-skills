@@ -3,7 +3,7 @@
 import os, hashlib
 import numpy as np
 from PIL import Image
-from rembg import remove
+from cutout-lib import remove
 import onnxruntime as ort
 
 SRC = r"B:\mode\pinterest\images"
