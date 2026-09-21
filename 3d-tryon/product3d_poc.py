@@ -1,5 +1,5 @@
 
-# 商品3D化POC:真实商品图(Pinterest前5张)→rembg→白底→深度→mesh
+# 商品3D化POC:真实商品图(Pinterest前5张)→cutout_lib→白底→深度→mesh
 import os
 import numpy as np
 from PIL import Image
@@ -8,8 +8,8 @@ SRC = r"B:\mode\pinterest\images"
 OUT = r"B:\mode\vton_training\garment_poc"
 os.makedirs(OUT, exist_ok=True)
 
-# ① rembg抠图→白底
-from rembg import remove
+# ① cutout_lib抠图→白底
+from cutout_lib import remove
 files = sorted(os.listdir(SRC))[:5]
 for f in files:
     img = Image.open(os.path.join(SRC, f)).convert("RGB")
@@ -22,7 +22,7 @@ for f in files:
     cut.save(os.path.join(OUT, f"cut_{f}.png"))
     print("WHITEBG", f, flush=True)
 
-# ② 深度(Depth-Anything-V2)
+# ② 深度(depth-model-V2)
 import onnxruntime as ort
 sess = ort.InferenceSession(r"B:\mode\models\depth_anything_v2_small.onnx", providers=["CPUExecutionProvider"])
 iname = sess.get_inputs()[0].name

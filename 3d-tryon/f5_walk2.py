@@ -4,13 +4,13 @@ import os, math
 import numpy as np
 import torch
 from PIL import Image, ImageDraw
-import anny
+import body_engine
 
 OUT = r"B:\mode\vton_training\garment_poc"
 FRAMES_DIR = os.path.join(OUT, "walk_frames")
 os.makedirs(FRAMES_DIR, exist_ok=True)
 
-model = anny.Anny(local_changes="default")
+model = body_engine.BodyEngine(local_changes="default")
 NB = model.bone_count
 print("骨骼数:", NB, flush=True)
 
@@ -42,7 +42,7 @@ def frame_pose(t):
     for b in leg_bones:
         side = 1 if bh[b,0] > 0 else -1
         ang = swing * side if abs(bh[b,2]) < 0.1 else swing * side * 0.5  # 膝踝减幅
-        # 局部旋转(相对父骨骼),让anny FK链处理
+        # 局部旋转(相对父骨骼),让body_engine FK链处理
         P[b][:3,:3] = rot_x(ang) @ P[b][:3,:3]
     for b in arm_bones:
         side = 1 if bh[b,0] > 0 else -1

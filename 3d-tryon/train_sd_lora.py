@@ -1,5 +1,5 @@
 
-# SD1.5换装LoRA训练 v1 (3060Ti 8G)
+# gen-base换装light-adapter训练 v1 (3060Ti 8G)
 import os, io, json, math, time
 import torch
 from PIL import Image
@@ -33,7 +33,7 @@ def main():
     pipe = StableDiffusionPipeline.from_single_file(SD, torch_dtype=torch.float16, safety_checker=None, requires_safety_checker=False)
     pipe.to(DEVICE)
     vae, unet, te = pipe.vae, pipe.unet, pipe.tokenizer, # keep
-    # LoRA on UNet
+    # light-adapter on UNet
     lcfg = LoraConfig(r=8, lora_alpha=16, target_modules=["to_q","to_k","to_v","to_out_0"], lora_dropout=0.0)
     global unet_l
     unet_l = get_peft_model(pipe.unet, lcfg)

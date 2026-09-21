@@ -4,10 +4,10 @@ import os
 import numpy as np
 import torch
 from PIL import Image, ImageDraw
-import anny
+import body_engine
 
 OUT = r"B:\mode\vton_training\garment_poc"
-model = anny.Anny(local_changes="default")
+model = body_engine.BodyEngine(local_changes="default")
 pose = torch.eye(4, dtype=torch.float64)[None, None].repeat(1, model.bone_count, 1, 1)
 res = model(pose, {"height": 0.5, "weight": 0.5})
 V = np.asarray(res["vertices"])[0]
