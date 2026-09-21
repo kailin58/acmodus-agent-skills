@@ -1,0 +1,317 @@
+{
+ "images": 150,
+ "rules": [
+  {
+   "colors": [
+    "gray",
+    "light_gray"
+   ],
+   "count": 60,
+   "confidence": 0.56
+  },
+  {
+   "colors": [
+    "black",
+    "gray"
+   ],
+   "count": 46,
+   "confidence": 0.43
+  },
+  {
+   "colors": [
+    "gray",
+    "orange"
+   ],
+   "count": 45,
+   "confidence": 0.42
+  },
+  {
+   "colors": [
+    "black",
+    "orange"
+   ],
+   "count": 40,
+   "confidence": 0.57
+  },
+  {
+   "colors": [
+    "black",
+    "light_gray"
+   ],
+   "count": 35,
+   "confidence": 0.37
+  },
+  {
+   "colors": [
+    "light_gray",
+    "orange"
+   ],
+   "count": 29,
+   "confidence": 0.31
+  },
+  {
+   "colors": [
+    "gray",
+    "white"
+   ],
+   "count": 20,
+   "confidence": 0.19
+  },
+  {
+   "colors": [
+    "light_gray",
+    "white"
+   ],
+   "count": 18,
+   "confidence": 0.19
+  },
+  {
+   "colors": [
+    "light_gray",
+    "red"
+   ],
+   "count": 13,
+   "confidence": 0.14
+  },
+  {
+   "colors": [
+    "gray",
+    "red"
+   ],
+   "count": 13,
+   "confidence": 0.12
+  },
+  {
+   "colors": [
+    "orange",
+    "white"
+   ],
+   "count": 12,
+   "confidence": 0.17
+  },
+  {
+   "colors": [
+    "light_gray",
+    "yellow"
+   ],
+   "count": 12,
+   "confidence": 0.13
+  },
+  {
+   "colors": [
+    "black",
+    "white"
+   ],
+   "count": 11,
+   "confidence": 0.16
+  },
+  {
+   "colors": [
+    "gray",
+    "yellow"
+   ],
+   "count": 8,
+   "confidence": 0.07
+  },
+  {
+   "colors": [
+    "blue",
+    "light_gray"
+   ],
+   "count": 7,
+   "confidence": 0.07
+  },
+  {
+   "colors": [
+    "orange",
+    "yellow"
+   ],
+   "count": 7,
+   "confidence": 0.1
+  },
+  {
+   "colors": [
+    "black",
+    "yellow"
+   ],
+   "count": 7,
+   "confidence": 0.1
+  },
+  {
+   "colors": [
+    "white",
+    "yellow"
+   ],
+   "count": 6,
+   "confidence": 0.16
+  },
+  {
+   "colors": [
+    "blue",
+    "gray"
+   ],
+   "count": 5,
+   "confidence": 0.05
+  },
+  {
+   "colors": [
+    "gray",
+    "green"
+   ],
+   "count": 3,
+   "confidence": 0.03
+  },
+  {
+   "colors": [
+    "blue",
+    "orange"
+   ],
+   "count": 3,
+   "confidence": 0.04
+  },
+  {
+   "colors": [
+    "green",
+    "light_gray"
+   ],
+   "count": 3,
+   "confidence": 0.03
+  },
+  {
+   "colors": [
+    "red",
+    "white"
+   ],
+   "count": 3,
+   "confidence": 0.08
+  },
+  {
+   "colors": [
+    "blue",
+    "white"
+   ],
+   "count": 2,
+   "confidence": 0.05
+  },
+  {
+   "colors": [
+    "cyan",
+    "light_gray"
+   ],
+   "count": 2,
+   "confidence": 0.02
+  },
+  {
+   "colors": [
+    "cyan",
+    "gray"
+   ],
+   "count": 2,
+   "confidence": 0.02
+  },
+  {
+   "colors": [
+    "orange",
+    "red"
+   ],
+   "count": 2,
+   "confidence": 0.03
+  },
+  {
+   "colors": [
+    "light_gray",
+    "pink"
+   ],
+   "count": 2,
+   "confidence": 0.02
+  },
+  {
+   "colors": [
+    "green",
+    "orange"
+   ],
+   "count": 1,
+   "confidence": 0.01
+  },
+  {
+   "colors": [
+    "blue",
+    "green"
+   ],
+   "count": 1,
+   "confidence": 0.1
+  },
+  {
+   "colors": [
+    "green",
+    "white"
+   ],
+   "count": 1,
+   "confidence": 0.03
+  },
+  {
+   "colors": [
+    "black",
+    "red"
+   ],
+   "count": 1,
+   "confidence": 0.01
+  },
+  {
+   "colors": [
+    "green",
+    "red"
+   ],
+   "count": 1,
+   "confidence": 0.06
+  },
+  {
+   "colors": [
+    "pink",
+    "red"
+   ],
+   "count": 1,
+   "confidence": 0.06
+  },
+  {
+   "colors": [
+    "blue",
+    "red"
+   ],
+   "count": 1,
+   "confidence": 0.06
+  },
+  {
+   "colors": [
+    "cyan",
+    "orange"
+   ],
+   "count": 1,
+   "confidence": 0.01
+  },
+  {
+   "colors": [
+    "cyan",
+    "yellow"
+   ],
+   "count": 1,
+   "confidence": 0.05
+  },
+  {
+   "colors": [
+    "gray",
+    "pink"
+   ],
+   "count": 1,
+   "confidence": 0.01
+  },
+  {
+   "colors": [
+    "red",
+    "yellow"
+   ],
+   "count": 1,
+   "confidence": 0.05
+  }
+ ]
+}
