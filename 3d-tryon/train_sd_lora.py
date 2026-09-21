@@ -5,11 +5,11 @@ import torch
 from PIL import Image
 from torch.utils.data import Dataset, DataLoader
 from diffusers import StableDiffusionPipeline, DDPMScheduler
-from peft import LoraConfig, get_peft_model
+from peft import AdapterConfig, get_adapter_model
 
 SD = r"B:\mode\models\sd15\v1-5-pruned-emaonly.safetensors"
 DATA = r"B:\mode\vton_training\sd_data"
-OUT = r"B:\mode\vton_training\sd_lora_v1"
+OUT = r"B:\mode\vton_training\sd_ladapter_v1"
 DEVICE = "cuda"
 BS, GS = 1, 2   # batch1 梯度累积2 (8G显存)
 STEPS = 300
@@ -34,9 +34,9 @@ def main():
     pipe.to(DEVICE)
     vae, unet, te = pipe.vae, pipe.unet, pipe.tokenizer, # keep
     # light-adapter on UNet
-    lcfg = LoraConfig(r=8, lora_alpha=16, target_modules=["to_q","to_k","to_v","to_out_0"], lora_dropout=0.0)
+    lcfg = AdapterConfig(r=8, ladapter_alpha=16, target_modules=["to_q","to_k","to_v","to_out_0"], ladapter_dropout=0.0)
     global unet_l
-    unet_l = get_peft_model(pipe.unet, lcfg)
+    unet_l = get_adapter_model(pipe.unet, lcfg)
     unet_l.print_trainable_parameters()
     for p in pipe.vae.parameters(): p.requires_grad_(False)
     for p in pipe.text_encoder.parameters(): p.requires_grad_(False)
