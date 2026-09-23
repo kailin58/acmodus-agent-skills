@@ -1,0 +1,23 @@
+{
+ "_schema": "用户档案v1(本地存,零上传)",
+ "gender": null,
+ "age": null,
+ "ethnicity": null,
+ "body": {
+  "height_cm": null,
+  "weight_kg": null,
+  "chest": null,
+  "waist": null,
+  "hip": null,
+  "cup": null
+ },
+ "face": {
+  "aspect": null,
+  "jaw": null,
+  "nose": null
+ },
+ "device_tier": null,
+ "render_fps": null,
+ "negative_prefs": [],
+ "updated": null
+}
