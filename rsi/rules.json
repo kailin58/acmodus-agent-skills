@@ -1,0 +1,39 @@
+{
+ "breed": {
+  "best_version": "v3_res34",
+  "best_metric": 0.959,
+  "greens": [
+   "预训练微调必用",
+   "大网+增强+5.8pt",
+   "enb3+mixup;RED:fc要改classifier[1]",
+   "两段式(先大lr再6e-5续)"
+  ],
+  "reds": [
+   "从头训崩",
+   "不如两段式"
+  ]
+ },
+ "try_student": {
+  "best_version": "v8r_回归",
+  "best_metric": 9,
+  "greens": [
+   "步数到20k+见布局",
+   "回归式碾压扩散;RED:扩散学生路线弃"
+  ],
+  "reds": []
+ },
+ "pet_try": {
+  "best_version": "v25",
+  "best_metric": 9,
+  "greens": [
+   "mask对齐训练分布=根治塌缩",
+   "负向只加具体物不加语义"
+  ],
+  "reds": [
+   "重采引入围巾先验",
+   "负向词小数据集放大成掉衣",
+   "权重>1.3引脸畸",
+   "8G显存OOM"
+  ]
+ }
+}
