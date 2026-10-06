@@ -14,11 +14,15 @@ for _d in _g.glob(os.path.join(OUT, "*")):
     if os.path.isdir(_d) and len(_g.glob(os.path.join(_d, "img_*"))) >= 15:
         _done.add(os.path.basename(_d))
 for brand, url, _code in BATCH:
-    bkey = brand.replace(" ", "_").replace("/", "-")[:40]
+    bdir0 = os.path.join(OUT, brand.replace(" ", "_").replace("/", "-")[:40])
+    if os.path.exists(bdir0) and not os.path.isdir(bdir0):
+        os.remove(bdir0)
+    bkey = __import__("re").sub(r'[^A-Za-z0-9_\-]', "_", brand)[:40]
     if bkey in _done:
         print(brand, "SKIP已采", flush=True)
         continue
-    bdir = os.path.join(OUT, brand.replace(" ", "_").replace("/", "-")[:40])
+    import re as _re
+    bdir = os.path.join(OUT, _re.sub(r'[^A-Za-z0-9_\-]', "_", brand)[:40])
     os.makedirs(bdir, exist_ok=True)
     try:
         import threading
