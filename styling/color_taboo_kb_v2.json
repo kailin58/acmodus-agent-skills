@@ -282,5 +282,6 @@
   ],
   "engine_action": "识别国家/宗教场景→换装模块附加当地着装规范提示,不推荐冲突搭配"
  },
- "ritual_garment_taboo": "同宠物库ritual_garment_taboo节(12项祭祀服饰黑名单)——最高优先级"
+ "ritual_garment_taboo": "同宠物库ritual_garment_taboo节(12项祭祀服饰黑名单)——最高优先级",
+ "cultural_compliance_v3": "同宠物库v3节:身体暴露/国旗/政治符号/数字/手势——人宠通用"
 }
