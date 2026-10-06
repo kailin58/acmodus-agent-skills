@@ -283,5 +283,8 @@
   "engine_action": "识别国家/宗教场景→换装模块附加当地着装规范提示,不推荐冲突搭配"
  },
  "ritual_garment_taboo": "同宠物库ritual_garment_taboo节(12项祭祀服饰黑名单)——最高优先级",
- "cultural_compliance_v3": "同宠物库v3节:身体暴露/国旗/政治符号/数字/手势——人宠通用"
+ "cultural_compliance_v3": "同宠物库v3节:身体暴露/国旗/政治符号/数字/手势——人宠通用",
+ "flower_taboo": "独立库flower_taboo_kb_v1(14条);莲花/万寿菊升祭祀层",
+ "food_taboo": "独立库food_taboo_kb_v1(10组);斋月日历联动+明胶胶原成分标注",
+ "final_layers": "动物象征7条+材质4条+礼节5条+性别分置+节日历v1——查漏收口"
 }

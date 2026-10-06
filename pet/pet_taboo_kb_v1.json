@@ -168,5 +168,89 @@
    "pointing_sole": "中东泰国脚底对人=重冒犯",
    "action": "虚拟自己/宠物姿态生成检测手部脚部朝向"
   }
+ },
+ "animal_symbol_taboo": {
+  "_sources": [
+   "IFAW全球动物象征",
+   "SAPIENS人类学(猫头鹰死亡鸟考)",
+   "Pune大学57墓地实证研究",
+   "唐书/阿兹特克记载"
+  ],
+  "rules": [
+   {
+    "animal": "猫头鹰",
+    "region": "印度/非洲多国/斯里兰卡/部分美洲原住民/中世纪欧洲传统",
+    "meaning": "死亡预兆/巫术鸟(印度Maharashtra=尸鸟Madhe Pakhru;斯里兰卡ulama魔鬼鸟)",
+    "reverse": "现代日本=福鸟;古希腊=智慧",
+    "action": "宠物形象/印花在中印非洲市场避开或配积极语境"
+   },
+   {
+    "animal": "牛",
+    "region": "印度",
+    "meaning": "神圣不可杀(实证:宁饿死不食)",
+    "action": "已入饮食/材质库,形象使用避'牛肉'关联"
+   },
+   {
+    "animal": "虎",
+    "region": "印度教",
+    "meaning": "Shiva/Durga神骑=神圣",
+    "action": "虎纹服饰在印度正式场合慎"
+   },
+   {
+    "animal": "鹤/龟",
+    "region": "中日",
+    "meaning": "长寿吉物",
+    "action": "正面可用"
+   },
+   {
+    "animal": "蝙蝠",
+    "region": "西方",
+    "meaning": "吸血鬼/厄运;中国=福",
+    "action": "中西反向案例"
+   },
+   {
+    "animal": "孔雀",
+    "region": "印度国鸟神圣/欧美装饰义",
+    "action": "正面但印度避商用滥用"
+   },
+   {
+    "animal": "蛇",
+    "region": "多地",
+    "meaning": "圣经撒旦/印度教那伽神圣/中国小龙",
+    "action": "语境敏感"
+   }
+  ]
+ },
+ "material_taboo": {
+  "leather_cow": "印度市场牛皮=冒犯(与圣牛库联动)",
+  "pigskin_gelatin": "伊斯兰市场猪源明胶/胶原(化妆品唇膏)需成分标注或换植物源",
+  "fur": "欧美动保敏感→标注来源",
+  "silk_lotus_print": "莲花印丝绸在印/东南亚=神圣物日常化慎用"
+ },
+ "etiquette_extras": {
+  "gift_wrapping": {
+   "color": "白包装东亚=丧/黑包装日本=丧",
+   "action": "礼品场景包装色跟随颜色库"
+  },
+  "chopsticks_vertical": "中日韩竖插饭=祭奠死者,饮食内容图大忌",
+  "left_hand": "印度/中东/非洲左手递物=不洁,手势检测联动",
+  "shoes_indoor": "东亚/中东入户脱鞋,场景生成注意",
+  "sole_showing": "泰国/中东脚底对人=重冒犯(已有,并入)"
+ },
+ "gender_dress_norms": {
+  "strict_regions": [
+   "沙特历史mutawa执法",
+   "伊朗道德警察",
+   "阿富汗塔利班"
+  ],
+  "action": "男装女装默认严格分置,不生成中性混搭推荐(该地区画像)"
+ },
+ "festival_calendar_v1": {
+  "ramadan": "白天避美食推送+着装建议偏保守",
+  "diwali": "印度亮色推荐窗口(红金)",
+  "cny": "中国红金窗口,白黑避",
+  "toussaint": "法意菊花生效窗口强化",
+  "halloween": "黑猫刻板规避窗口",
+  "action": "日期触发对应库的时序强化"
  }
 }
