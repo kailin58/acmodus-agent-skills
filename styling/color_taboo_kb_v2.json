@@ -1,0 +1,285 @@
+{
+ "_schema": "颜色文化禁忌库v1(硬过滤级,尊重宗教信仰)",
+ "_sources": "跨文化礼仪资料+伊斯兰服饰史料(学术论文),置信度分级",
+ "rules": [
+  {
+   "group": "中国(喜庆场景)",
+   "scene": "婚礼/庆典",
+   "avoid": [
+    "纯白主色"
+   ],
+   "caution": [],
+   "reason": "丧仪联想",
+   "conf": "high"
+  },
+  {
+   "group": "日本",
+   "scene": "通用",
+   "avoid": [],
+   "caution": [
+    "黑白相间",
+    "绿色(赠礼)",
+    "深灰"
+   ],
+   "reason": "传统禁忌",
+   "conf": "high"
+  },
+  {
+   "group": "蒙古",
+   "scene": "通用",
+   "avoid": [
+    "黑色主色"
+   ],
+   "caution": [],
+   "reason": "不幸象征",
+   "conf": "medium"
+  },
+  {
+   "group": "印度(印度教)",
+   "scene": "婚礼/庆典",
+   "avoid": [
+    "白主色",
+    "黑主色"
+   ],
+   "caution": [],
+   "reason": "白=丧/黑=不吉",
+   "conf": "high"
+  },
+  {
+   "group": "泰国",
+   "scene": "通用",
+   "avoid": [
+    "褐色主色"
+   ],
+   "caution": [
+    "黄色(王室)"
+   ],
+   "reason": "丧仪+王室",
+   "conf": "high"
+  },
+  {
+   "group": "马来西亚",
+   "scene": "通用",
+   "avoid": [
+    "黄色"
+   ],
+   "caution": [
+    "绿色(宗教神圣,时尚主色慎用)"
+   ],
+   "reason": "黄=死亡/王室;绿=伊斯兰圣色",
+   "conf": "high"
+  },
+  {
+   "group": "新加坡",
+   "scene": "通用",
+   "avoid": [
+    "黑"
+   ],
+   "caution": [
+    "白",
+    "黄",
+    "紫"
+   ],
+   "reason": "华侨传统",
+   "conf": "medium"
+  },
+  {
+   "group": "沙特/海湾国家",
+   "scene": "通用",
+   "avoid": [
+    "黄色"
+   ],
+   "caution": [
+    "绿色(圣色,国旗绿商用禁)",
+    "男性纯丝金饰"
+   ],
+   "reason": "黄=死亡;宗教规范",
+   "conf": "high"
+  },
+  {
+   "group": "巴基斯坦",
+   "scene": "通用",
+   "avoid": [
+    "黄色"
+   ],
+   "caution": [
+    "黑色(消极)"
+   ],
+   "reason": "宗教+婆罗门袍联想",
+   "conf": "high"
+  },
+  {
+   "group": "伊拉克",
+   "scene": "通用",
+   "avoid": [],
+   "caution": [
+    "国旗橄榄绿(商用)",
+    "黑(丧)"
+   ],
+   "reason": "国别规范",
+   "conf": "medium"
+  },
+  {
+   "group": "伊斯兰-男性",
+   "scene": "通用",
+   "avoid": [
+    "饱和正红(深红紫可用)",
+    "黄色",
+    "丝绸+黄金"
+   ],
+   "caution": [],
+   "reason": "圣训服装规范(学术史料)",
+   "conf": "medium"
+  },
+  {
+   "group": "埃及",
+   "scene": "通用",
+   "avoid": [
+    "蓝",
+    "紫"
+   ],
+   "caution": [
+    "黑",
+    "星星图案"
+   ],
+   "reason": "恶魔/消极色",
+   "conf": "medium"
+  },
+  {
+   "group": "埃塞俄比亚",
+   "scene": "做客",
+   "avoid": [
+    "淡黄色"
+   ],
+   "caution": [],
+   "reason": "丧服色",
+   "conf": "high"
+  },
+  {
+   "group": "尼日利亚/加纳等西非多国",
+   "scene": "通用",
+   "avoid": [
+    "黑红组合"
+   ],
+   "caution": [
+    "黑色"
+   ],
+   "reason": "消极联想",
+   "conf": "medium"
+  },
+  {
+   "group": "乍得/多哥/贝宁",
+   "scene": "通用",
+   "avoid": [
+    "黑+红(乍得)",
+    "红黄黑(多哥)",
+    "红黑(贝宁)"
+   ],
+   "caution": [],
+   "reason": "国别禁忌",
+   "conf": "medium"
+  },
+  {
+   "group": "欧美基督教文化",
+   "scene": "日常",
+   "avoid": [],
+   "caution": [
+    "纯黑全身(丧仪感)",
+    "黄(叛徒犹大联想,微弱)"
+   ],
+   "reason": "葬礼传统",
+   "conf": "low"
+  },
+  {
+   "group": "比利时",
+   "scene": "通用",
+   "avoid": [
+    "蓝色服装"
+   ],
+   "caution": [],
+   "reason": "恶兆联想",
+   "conf": "low"
+  },
+  {
+   "group": "巴西",
+   "scene": "通用",
+   "avoid": [
+    "棕黄色"
+   ],
+   "caution": [
+    "紫色"
+   ],
+   "reason": "凶丧",
+   "conf": "medium"
+  },
+  {
+   "group": "德国",
+   "scene": "通用",
+   "avoid": [],
+   "caution": [
+    "红(凶兆)",
+    "黑(不喜欢)"
+   ],
+   "reason": "文化偏好",
+   "conf": "low"
+  }
+ ],
+ "enforcement": "hard_filter(avoid列) + soft_warn(caution列)",
+ "priority": "高于颜色共现规则库;用户民族/宗教档案→匹配组→过滤",
+ "fallback": "未匹配组→只用通用色彩理论,不套用禁忌",
+ "_authoritative_sources_v2": [
+  {
+   "name": "Pew Research Center",
+   "url": "pewresearch.org",
+   "role": "198国宗教着装法律追踪(GRI+SHI指数)",
+   "finding": "50国限制女性宗教着装;61国有头巾法规"
+  },
+  {
+   "name": "UNESCO Multimedia Archives",
+   "url": "unesco.org/archives/multimedia",
+   "role": "民族志影像+非遗纺织服饰纪录片",
+   "license": "联系权利方"
+  },
+  {
+   "name": "Smithsonian NAA",
+   "url": "sirismm.si.edu",
+   "role": "43万张民族志历史照片(Murdock编目)",
+   "license": "多公版"
+  },
+  {
+   "name": "PICRYL/GetArchive",
+   "url": "getarchive.net",
+   "role": "3743张传统服饰公版图(LoC/Rijksmuseum)",
+   "license": "公有领域可商用"
+  },
+  {
+   "name": "Xerox/Univ of Illinois",
+   "url": "xerox.com",
+   "role": "Vanka跨文化颜色研究",
+   "finding": "绿=穆斯林神圣/橙=印度教/伊朗绿最神圣"
+  }
+ ],
+ "_dress_law_dimension": {
+  "source": "Pew 2020 198国研究",
+  "hijab_required": [
+   "伊朗",
+   "沙特(已放宽)",
+   "印尼(地方法规)",
+   "阿富汗塔利班时期"
+  ],
+  "hijab_restricted": [
+   "法国公立学校",
+   "比利时",
+   "挪威教育机构",
+   "土耳其公共部门"
+  ],
+  "dual_harassment": [
+   "德国",
+   "印度",
+   "印尼",
+   "以色列",
+   "俄罗斯"
+  ],
+  "engine_action": "识别国家/宗教场景→换装模块附加当地着装规范提示,不推荐冲突搭配"
+ }
+}
