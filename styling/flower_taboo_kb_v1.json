@@ -1,0 +1,89 @@
+{
+ "_sources": [
+  "bloomingexpert文化指南",
+  "bloomboxhk跨国花礼指南",
+  "thursd/floriography研究",
+  "mortl葬礼花文化考"
+ ],
+ "rules": [
+  {
+   "flower": "菊花",
+   "region": "法国/意大利/比利时/西班牙/葡萄牙/波兰/奥地利",
+   "meaning": "专属丧葬花(万圣节扫墓用),任何场合赠送=重冒犯",
+   "action": "拦截"
+  },
+  {
+   "flower": "白菊花/黄花菊",
+   "region": "中国/日本/韩国/越南",
+   "meaning": "哀悼/丧仪(日本又=皇室徽=双义)",
+   "action": "喜庆场景拦截;日本正式场合需语境"
+  },
+  {
+   "flower": "白花(百合/菊/莲)",
+   "region": "东亚全域",
+   "meaning": "白色=丧色",
+   "action": "喜庆生成默认换暖色"
+  },
+  {
+   "flower": "莲花",
+   "region": "印度/东南亚",
+   "meaning": "印度教佛教神圣供花,随意穿戴=渎神(似摘神坛供品)",
+   "action": "服饰印花慎用→等同祭祀层"
+  },
+  {
+   "flower": "菊花(黄色)",
+   "region": "中国",
+   "meaning": "悼念专用",
+   "action": "拦截喜庆"
+  },
+  {
+   "flower": "山茶花tsubaki",
+   "region": "日本",
+   "meaning": "整朵落地似斩首,探病大忌",
+   "action": "医院场景拦截"
+  },
+  {
+   "flower": "彼岸花higanbana",
+   "region": "日本",
+   "meaning": "死亡/冥界/墓畔花",
+   "action": "拦截"
+  },
+  {
+   "flower": "梨花",
+   "region": "中国",
+   "meaning": "梨=离,恋人忌",
+   "action": "情侣场景避"
+  },
+  {
+   "flower": "百合(白)",
+   "region": "英美",
+   "meaning": "葬礼花",
+   "action": "喜庆慎"
+  },
+  {
+   "flower": "红白花组合",
+   "region": "意大利",
+   "meaning": "血与绷带/丧仪",
+   "action": "拦截组合"
+  },
+  {
+   "flower": "万寿菊marigold",
+   "region": "墨西哥",
+   "meaning": "亡灵节引路花(神圣专用)",
+   "action": "祭祀层"
+  },
+  {
+   "flower": "康乃馨(红)",
+   "region": "欧美",
+   "meaning": "部分场合视作廉价/低诚意",
+   "action": "软提醒"
+  },
+  {
+   "flower": "偶数枝",
+   "region": "俄罗斯/乌克兰/波兰/中亚",
+   "meaning": "偶数=给死者,活人必须奇数",
+   "action": "推荐数自动修正为奇数"
+  }
+ ],
+ "engine_layer": "与颜色同级但独立通道:图案识别(服饰印花/花束/背景)→花型库查询→地区匹配→拦截或替换"
+}
