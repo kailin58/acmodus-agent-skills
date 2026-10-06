@@ -1,0 +1,59 @@
+{
+ "_sources": [
+  "PMC/Animals期刊(黑猫偏见实证)",
+  "伊斯兰教义(先知圣训)",
+  "犹太Kashrut",
+  "History.com民俗档案"
+ ],
+ "religious": {
+  "islam": {
+   "dog": "口水视为不洁(najis),接触后需洗手;狗可养但限户外/工作犬(牧羊护卫);猫=洁净(tahir)可入清真寺,先知爱猫",
+   "pet_dress_action": "伊斯兰地区:宠物服饰避免模仿宗教服饰;狗类内容配洗手提示"
+  },
+  "judaism": {
+   "note": "狗猫非洁食动物但可养;黑猫红衣民俗各异",
+   "pet_dress_action": "正统社区:宠物服饰避免十字/其他宗教符号"
+  },
+  "hinduism": {
+   "note": "狗在尼泊尔Kukur Tihar受拜;猫少提;牛神圣(服饰避免牛皮宣传)",
+   "pet_dress_action": "避免牛皮材质强调"
+  },
+  "buddhism": {
+   "note": "放生传统,忌装饰干扰动物",
+   "pet_dress_action": "温和提示"
+  }
+ },
+ "color_superstition": {
+  "black_cat": {
+   "west_bad": "美/欧陆=厄运刻板(实证:收养慢2-6天)",
+   "uk_japan_good": "英国船运吉物/日本招福",
+   "action": "黑猫形象在西方市场配积极文案,不强化厄运联想"
+  },
+  "black_dog": {
+   "syndrome": "大黑狗收养歧视(实证存在)",
+   "action": "宠物形象生成中黑狗配暖光场景对冲"
+  },
+  "white_cat": {
+   "some_regions": "部分收容所白猫反而更慢",
+   "action": "无硬禁"
+  }
+ },
+ "breed_regional": {
+  "pitbull_ban": [
+   "英国(禁养令Dangerous Dogs Act)",
+   "德国部分州",
+   "加拿大部分省",
+   "法国需登记",
+   "香港/新加坡限制"
+  ],
+  "action": "品种识别到禁养区品种→提示当地法规,不生成'战斗姿态'内容",
+  "china_urban": "部分城市禁大型犬(北京限养区/上海导则)→提示合规遛狗场景"
+ },
+ "dress_taboo_engine": {
+  "rule1": "宠物服饰图案避开宗教符号(十字/星月/卍/om)",
+  "rule2": "沙特/伊朗场景:宠物服饰模特图避免公开场合拟人化着装(当地文化保守)",
+  "rule3": "黑猫+万圣节场景在欧美=强化刻板,默认换暖色节日场景",
+  "rule4": "印度市场避免牛皮/皮革宣传词",
+  "priority": "与人类颜色禁忌库同级,先查人类禁忌再查宠物禁忌"
+ }
+}
