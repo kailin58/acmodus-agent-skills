@@ -1,0 +1,228 @@
+{
+ "breed": [
+  {
+   "v": "v1_scratch",
+   "arch": "cnn_scratch",
+   "data": "oxford37",
+   "acc": 0.078,
+   "note": "RED:从头训崩"
+  },
+  {
+   "v": "v2",
+   "arch": "resnet34_ft",
+   "data": "oxford37",
+   "acc": 0.346,
+   "note": ""
+  },
+  {
+   "v": "v3_res34",
+   "arch": "resnet34_pretrained_ft",
+   "data": "oxford37",
+   "acc": 0.959,
+   "note": "GREEN:预训练微调必用"
+  },
+  {
+   "v": "v2_120",
+   "arch": "resnet34",
+   "data": "stanford120",
+   "acc": 0.71,
+   "note": ""
+  },
+  {
+   "v": "v2b",
+   "arch": "resnet34_续训",
+   "data": "stanford120",
+   "acc": 0.713,
+   "note": "饱和"
+  },
+  {
+   "v": "v2c_r50",
+   "arch": "resnet50+强增强+192px",
+   "data": "stanford120",
+   "acc": 0.771,
+   "note": "GREEN:大网+增强+5.8pt"
+  },
+  {
+   "v": "v2d_enb3",
+   "arch": "efficientnet_b3+mixup+224px",
+   "data": "stanford120",
+   "acc": 0.804,
+   "note": "GREEN:enb3+mixup;RED:fc要改classifier[1]"
+  },
+  {
+   "v": "v2e_续",
+   "arch": "enb3低lr3ep续训",
+   "data": "stanford120",
+   "acc": 0.837,
+   "note": "GREEN:两段式(先大lr再6e-5续)"
+  },
+  {
+   "v": "v2f",
+   "arch": "enb3直训6ep",
+   "data": "stanford120",
+   "acc": 0.823,
+   "note": "RED:不如两段式"
+  }
+ ],
+ "try_student": [
+  {
+   "v": "v6_扩散",
+   "arch": "UNet8M扩散",
+   "data": "346图",
+   "score": 3,
+   "note": ""
+  },
+  {
+   "v": "v6b",
+   "steps": 7500,
+   "score": 4,
+   "note": ""
+  },
+  {
+   "v": "v6c",
+   "steps": 22500,
+   "score": 4.5,
+   "note": ""
+  },
+  {
+   "v": "v6e/f",
+   "steps": 56000,
+   "score": 6,
+   "note": "GREEN:步数到20k+见布局"
+  },
+  {
+   "v": "v7_cond",
+   "arch": "6通道条件",
+   "steps": 67000,
+   "score": 5.5,
+   "note": "条件传导✓语义未出"
+  },
+  {
+   "v": "v8r_回归",
+   "arch": "RegUNet单步前向",
+   "data": "971图192px",
+   "score": 9,
+   "note": "GREEN:回归式碾压扩散;RED:扩散学生路线弃"
+  },
+  {
+   "v": "v16_256px",
+   "metric": 9.4,
+   "note": "256px边际+0.1,教师纹理天花板"
+  },
+  {
+   "v": "v17",
+   "metric": "9.4",
+   "note": "RED:教师毛孔经蒸馏不传导(-2.7%纹理)"
+  },
+  {
+   "v": "v18c毛孔头",
+   "metric": "脸区+34.5%",
+   "note": "GREEN:运行时注入>蒸馏传导(端侧3ms)"
+  }
+ ],
+ "pet_try": [
+  {
+   "v": "v19",
+   "lora": "v3_35对1200步",
+   "score": 8.5,
+   "note": ""
+  },
+  {
+   "v": "v20",
+   "lora": "v4_35对1800步",
+   "score": 8.2,
+   "note": "RED:重采引入围巾先验"
+  },
+  {
+   "v": "v21",
+   "caption": "含not scarf负向",
+   "score": 2.5,
+   "note": "RED:负向词小数据集放大成掉衣"
+  },
+  {
+   "v": "v25",
+   "mask": "上缘y100+头保y160",
+   "score": 9,
+   "note": "GREEN:mask对齐训练分布=根治塌缩"
+  },
+  {
+   "v": "v26",
+   "neg": "drool",
+   "score": 9,
+   "note": "GREEN:负向只加具体物不加语义"
+  },
+  {
+   "v": "v27",
+   "weight": "1.4权重",
+   "score": 6.5,
+   "note": "RED:权重>1.3引脸畸"
+  },
+  {
+   "v": "v32",
+   "controlnet": "canny",
+   "score": 0,
+   "note": "RED:8G显存OOM"
+  },
+  {
+   "v": "v6c本地",
+   "metric": "9.17纹理密度",
+   "note": "GREEN:SD1.5+CN全本地5秒/张"
+  },
+  {
+   "v": "v6d",
+   "metric": 5.97,
+   "note": "RED:CN1.1+权重1.3过强=引导线吃织纹"
+  },
+  {
+   "v": "v7nbest",
+   "metric": "13.57密度",
+   "note": "GREEN:seed123系+多seed挑最佳"
+  }
+ ],
+ "style": [
+  {
+   "v": "v5b",
+   "data": "民族421+官网51+教师971",
+   "metric": "catR0.828",
+   "note": "GREEN:民族图+17.6pt神效"
+  },
+  {
+   "v": "v6",
+   "data": "+官网100",
+   "metric": "sum1.602",
+   "note": "GREEN:官网图colR+16pt"
+  },
+  {
+   "v": "v8",
+   "data": "品牌启发式cat+主色col",
+   "metric": "catR0.97虚",
+   "note": "RED:品牌记忆泄漏!每图独立标注铁律"
+  },
+  {
+   "v": "v9",
+   "data": "意图真值1338",
+   "metric": "联合0.573",
+   "note": "四头管线通"
+  },
+  {
+   "v": "v10",
+   "data": "清洗1217+12ep",
+   "metric": "联合0.815",
+   "note": "GREEN:清洗+长训+42%"
+  },
+  {
+   "v": "v11/v12",
+   "data": "+画板280",
+   "metric": "0.78-0.79",
+   "note": "画板量小边际,持平"
+  }
+ ],
+ "glow": [
+  {
+   "v": "v6",
+   "data": "MT学术718",
+   "metric": "上妆81%幅度",
+   "note": "GREEN:MT数据集解卡自拍依赖"
+  }
+ ]
+}
