@@ -44,6 +44,7 @@ FAIL_PATTERNS = [
     {"name": "负向语义词", "pat": "not scarf|not a", "fix": "负向只加具体物(drool/blurry),禁not X语义"},
     {"name": "权重过高", "pat": ":1.4|:1.5", "fix": "prompt权重≤1.3"},
     {"name": "从零训练分类", "pat": "weights=None", "fix": "必须预训练微调"},
+    {"name": "resize尺寸不一致", "pat": "(192,192)", "fix": "输入/条件resize必须同尺寸(256版查192残留)"},
     {"name": "caption在循环内def", "pat": "for d in v4:\n    def ", "fix": "函数定义提循环外"},
 ]
 

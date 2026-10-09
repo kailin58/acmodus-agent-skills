@@ -35,5 +35,42 @@
    "权重>1.3引脸畸",
    "8G显存OOM"
   ]
+ },
+ "style": {
+  "best_version": "v10",
+  "best_metric": 0.815,
+  "greens": [
+   "意图真值标注(搜索词=标签)",
+   "清洗启发式91%保留",
+   "12ep长训"
+  ],
+  "reds": [
+   "品牌启发式标签=泄漏(v8教训)",
+   "每图必须独立标注"
+  ]
+ },
+ "glow": {
+  "best_version": "v6",
+  "best_metric": "81%",
+  "greens": [
+   "MT学术数据集(PSGAN开源)"
+  ],
+  "reds": [
+   "自拍采集成本高,学术集优先"
+  ]
+ },
+ "engineering": {
+  "greens": [
+   "chrome headless同profile串行(并发=锁死)",
+   "bat(set PYTHONUSERBASE)>pythonw长挂",
+   "B站搜索页直抽84封面/词",
+   "IG截图切格绕TLS墙",
+   "timeout110s防截断"
+  ],
+  "reds": [
+   "curl直下scontent必403",
+   "lookbook.nu已死",
+   "得物web=壳"
+  ]
  }
 }
