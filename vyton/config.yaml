@@ -1,0 +1,26 @@
+# vyton统一配置(高内聚:路径/超参集中,脚本零硬编码)
+paths:
+  pinterest_out: B:/mode/pinterest/outfit_imgs
+  board_out: B:/mode/pinterest/board_imgs
+  ig_out: B:/mode/ig_outfit/cells
+  yt_out: B:/mode/yt_outfit
+  bz_out: B:/mode/bz_outfit
+  glow_pairs: B:/mode/glow_data/pairs
+  models: B:/mode/models
+  rsi: B:/mode/rsi
+
+proxy: socks5://127.0.0.1:7897
+chrome_profile: B:/mode/pinterest/chrome_profile
+
+collect:
+  rate_limit_s: 7
+  per_source_cap: 2000
+
+train:
+  style_lr: 3e-4
+  glow_lr: 2e-4
+  try_lr: 1.2e-4
+
+quality_gate:
+  g2_tolerance: 0.95   # 指标不低于best-5%
+  g5_ms_budget: 500
