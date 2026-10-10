@@ -26,7 +26,12 @@ def skin_mask(rgb_arr):
     return ((h < 28) | (h > 235)) & (s > 15) & (s < 200) & (v > 50)
 
 
-def face_ellipse(H, W, cy=0.32, ey=0.30, cx=0.5, ex=0.36):
-    """脸区椭圆mask"""
+def face_ellipse(H, W, cy=0.32, ey=0.30, cx=0.5, ex=0.36, bbox=None):
+    """脸区椭圆mask;bbox=(x1,y1,x2,y2)可选=检测器输出优先"""
+    if bbox is not None:
+        x1, y1, x2, y2 = bbox
+        cx_, ex_ = (x1+x2)/2/W, max((x2-x1)/2, 8)/W
+        cy_, ey_ = (y1+y2)/2/H, max((y2-y1)/2, 8)/H
+        cy, ey, cx, ex = cy_, ey_, cx_, ex_
     yy, xx = np.mgrid[0:H, 0:W]
     return (((yy - H*cy)/(H*ey))**2 + ((xx - W*cx)/(W*ex))**2) < 1.0

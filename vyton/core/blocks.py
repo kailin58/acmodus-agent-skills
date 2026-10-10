@@ -27,13 +27,19 @@ class UNetLite(nn.Module):
         self.aux = nn.ModuleDict({k: nn.Linear(ch*3, v) for k, v in (aux_heads or {}).items()})
 
     def forward(self, x):
+        H, W = x.shape[-2:]
         h1 = self.d1(x); h2 = self.d2(self.pool(h1)); h3 = self.d3(self.pool(h2))
         m = self.mid(self.pool(h3))
         aux = {k: head(m.mean((2, 3))) for k, head in self.aux.items()}
-        u3 = self.u3(torch.cat([nn.functional.interpolate(m, scale_factor=2, mode="nearest"), h3], 1))
-        u2 = self.u2(torch.cat([nn.functional.interpolate(u3, scale_factor=2, mode="nearest"), h2], 1))
-        u1 = self.u1(torch.cat([nn.functional.interpolate(u2, scale_factor=2, mode="nearest"), h1], 1))
-        return torch.tanh(self.out(u1)), aux
+        def up_to(t, ref):
+            return nn.functional.interpolate(t, size=ref.shape[-2:], mode="nearest")
+        u3 = self.u3(torch.cat([up_to(m, h3), h3], 1))
+        u2 = self.u2(torch.cat([up_to(u3, h2), h2], 1))
+        u1 = self.u1(torch.cat([up_to(u2, h1), h1], 1))
+        out = self.out(u1)
+        if out.shape[-2:] != (H, W):
+            out = nn.functional.interpolate(out, size=(H, W), mode="bilinear", align_corners=False)
+        return torch.tanh(out), aux
 
 
 class MultiHeadCls(nn.Module):

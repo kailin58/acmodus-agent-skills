@@ -39,6 +39,9 @@ class ImageFolderDS(Dataset):
 class PairDS(Dataset):
     """配对数据集(a=输入,b=目标,同步增强)"""
     def __init__(self, files_a, files_b, size=192):
+        n_a, n_b = len(files_a), len(files_b)
+        if n_a != n_b:
+            print(f"[PairDS] 警告: 输入长度不等 a={n_a} b={n_b},截断到{min(n_a,n_b)}")
         self.pairs = [(a, b) for a, b in zip(files_a, files_b)
                       if os.path.exists(a) and os.path.exists(b)]
         self.size = size
