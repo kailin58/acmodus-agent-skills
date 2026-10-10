@@ -46,6 +46,11 @@ def gen_avatar(base_v, age, sex, height=None, weight=None, ethnic="东亚", regi
     if sex == "f" and age >= 13: sh_f *= 0.95
     sh_w = np.clip((newh - 0.72) / 0.1, 0, 1) * np.clip((0.95 - newh) / 0.06, 0, 1)
     out[:, 0] = v[:, 0] * (1 + (sh_f - 1) * sh_w)
+    # 头部放大(婴儿头大:head比例0.25→头宽×~1.7;头部y深同步)
+    hd_f = cfg["head"] / 0.13
+    hd_w = np.clip((newh - 0.86) / 0.06, 0, 1)
+    out[:, 0] = out[:, 0] * (1 + (hd_f - 1) * hd_w)
+    out[:, 1] = out[:, 1] * (1 + (hd_f - 1) * hd_w * 0.9)
     if lat_f != 1.0:
         belly = np.exp(-((newh - 0.60) ** 2) / 0.008)
         chest = np.exp(-((newh - 0.75) ** 2) / 0.01) * 0.7

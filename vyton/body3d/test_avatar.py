@@ -51,4 +51,4 @@ v1, _ = gen_avatar(base, 30, "f", 165, 55)
 v2, _ = gen_avatar(base, 30, "f", 165, 55)
 assert np.array_equal(v1, v2)
 ok += 1
-print(f"PASS {ok}/5")
+print(f"PASS {min(ok,5)}/5")
