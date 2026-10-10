@@ -5,18 +5,18 @@
 import re
 
 ACTIONS = {
-    "walk": {"frames": "walk12", "loop": True, "desc": "行走"},
-    "turn": {"frames": "turn36", "loop": False, "desc": "转身"},
-    "raise_hand": {"frames": "raise_arm", "loop": False, "desc": "抬手"},
-    "stand": {"frames": "f0_stand", "loop": True, "desc": "站立"},
+    "walk": {"frames": "walk", "loop": True, "desc": "行走"},
+    "turn": {"frames": "turn", "loop": False, "desc": "转身"},
+    "raise_hand": {"frames": "wave", "loop": False, "desc": "抬手"},
+    "stand": {"frames": "stand", "loop": True, "desc": "站立"},
     "sit": {"frames": "sit", "loop": False, "desc": "坐下"},
-    "jump": {"frames": "jump8", "loop": False, "desc": "跳"},
-    "wave": {"frames": "wave12", "loop": True, "desc": "挥手"},
-    "clap": {"frames": "clap10", "loop": True, "desc": "鼓掌"},
-    "squat": {"frames": "squat8", "loop": False, "desc": "蹲下"},
+    "jump": {"frames": "jump", "loop": False, "desc": "跳"},
+    "wave": {"frames": "wave", "loop": True, "desc": "挥手"},
+    "clap": {"frames": "clap", "loop": True, "desc": "鼓掌"},
+    "squat": {"frames": "squat", "loop": False, "desc": "蹲下"},
     "point": {"frames": "point", "loop": False, "desc": "指"},
-    "bow": {"frames": "bow8", "loop": False, "desc": "鞠躬"},
-    "dance": {"frames": "dance24", "loop": True, "desc": "跳舞"},
+    "bow": {"frames": "bow", "loop": False, "desc": "鞠躬"},
+    "dance": {"frames": "dance", "loop": True, "desc": "跳舞"},
 }
 
 PATTERNS = [  # 顺序=优先级(长模式在前防误吞)
