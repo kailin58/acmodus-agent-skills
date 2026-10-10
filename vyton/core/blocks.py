@@ -1,23 +1,20 @@
-"""vyton.core.blocks — 模型积木库(唯一实现,处处复用)
-用法:
-    from vyton.core.blocks import ConvBlk, UNetLite, MultiHeadCls
-    net = UNetLite(in_ch=6, out_ch=3, ch=48)      # 换装/化妆回归
-    cls = MultiHeadCls(backbone="enb3", heads={"cat":9,"col":12})  # 多头分类
+"""vyton.core.blocks — 模型积木(高内聚低耦合标准版)
+架构原则:底层共享(高内聚)+任务头独立(低耦合)
+aux头默认detach=True:辅助任务从特征学习,但不反传干扰主任务(单向依赖)
 """
 import torch, torch.nn as nn
 import torchvision.models as tvm
 
 
 def ConvBlk(i, o, norm="group"):
-    """卷积块(全项目唯一)"""
     n = nn.GroupNorm(8, o) if norm == "group" else nn.InstanceNorm2d(o)
     return nn.Sequential(nn.Conv2d(i, o, 3, padding=1), n, nn.SiLU(),
                          nn.Conv2d(o, o, 3, padding=1), nn.GroupNorm(8, o), nn.SiLU())
 
 
 class UNetLite(nn.Module):
-    """轻量UNet(Try学生/Glow共用架构)"""
-    def __init__(self, in_ch, out_ch, ch=24, aux_heads=None):
+    """轻量UNet;aux_detach=True=头不影响主干(低耦合)"""
+    def __init__(self, in_ch, out_ch, ch=24, aux_heads=None, aux_detach=True):
         super().__init__()
         self.d1 = ConvBlk(in_ch, ch); self.d2 = ConvBlk(ch, ch*2); self.d3 = ConvBlk(ch*2, ch*3)
         self.mid = ConvBlk(ch*3, ch*3)
@@ -25,12 +22,14 @@ class UNetLite(nn.Module):
         self.out = nn.Conv2d(ch, out_ch, 1)
         self.pool = nn.MaxPool2d(2)
         self.aux = nn.ModuleDict({k: nn.Linear(ch*3, v) for k, v in (aux_heads or {}).items()})
+        self.aux_detach = aux_detach
 
     def forward(self, x):
         H, W = x.shape[-2:]
         h1 = self.d1(x); h2 = self.d2(self.pool(h1)); h3 = self.d3(self.pool(h2))
         m = self.mid(self.pool(h3))
-        aux = {k: head(m.mean((2, 3))) for k, head in self.aux.items()}
+        m_feat = m.detach() if self.aux_detach else m  # 低耦合:单向
+        aux = {k: head(m_feat.mean((2, 3))) for k, head in self.aux.items()}
         def up_to(t, ref):
             return nn.functional.interpolate(t, size=ref.shape[-2:], mode="nearest")
         u3 = self.u3(torch.cat([up_to(m, h3), h3], 1))
@@ -43,7 +42,7 @@ class UNetLite(nn.Module):
 
 
 class MultiHeadCls(nn.Module):
-    """多任务分类头(Style四头统一)"""
+    """多头分类(Style系):头间零依赖(低耦合),可拆可加"""
     def __init__(self, backbone="enb3", heads=None, pretrained=True):
         super().__init__()
         w = {"enb3": (tvm.efficientnet_b3, tvm.EfficientNet_B3_Weights.IMAGENET1K_V1)}[backbone]
