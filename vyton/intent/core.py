@@ -10,18 +10,16 @@ ACTIONS = {
     "raise_hand": {"frames": "wave", "loop": False, "desc": "抬手"},
     "stand": {"frames": "stand", "loop": True, "desc": "站立"},
     "sit": {"frames": "sit", "loop": False, "desc": "坐下"},
-    "jump": {"frames": "jump", "loop": False, "desc": "跳"},
     "wave": {"frames": "wave", "loop": True, "desc": "挥手"},
     "clap": {"frames": "clap", "loop": True, "desc": "鼓掌"},
     "squat": {"frames": "squat", "loop": False, "desc": "蹲下"},
     "point": {"frames": "point", "loop": False, "desc": "指"},
     "bow": {"frames": "bow", "loop": False, "desc": "鞠躬"},
-    "dance": {"frames": "dance", "loop": True, "desc": "跳舞"},
+    "dance": {"combo": ["wave", "turn", "clap"], "loop": True, "desc": "跳舞(合规组合宏)"},
 }
 
 PATTERNS = [  # 顺序=优先级(长模式在前防误吞)
     (r"跳[个]?舞|跳舞|舞蹈|dance", "dance"),
-    (r"跳[一]?下|跳远|跳高|jump", "jump"),
     (r"走|walk|前进|过来|go", "walk"),
     (r"转身|转圈|turn|spin", "turn"),
     (r"抬手|举手|伸手|raise|hand up", "raise_hand"),
