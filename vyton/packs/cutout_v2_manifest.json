@@ -1,0 +1,40 @@
+{
+ "schemaVersion": "1.1",
+ "capability": "cutout",
+ "version": "2.0.0",
+ "backbone": {
+  "id": "mbv3s",
+  "file": "backbone.onnx",
+  "sha256": "ede817532ea3dc0ffee62cc8c4e35d76593b4c610c323827608cdacc50b717a6",
+  "feat_dim": 576,
+  "shared": false
+ },
+ "heads": [
+  {
+   "id": "cut",
+   "file": "head.onnx",
+   "sha256": "10c14985dc6373867a5ab08710f9b9a42fd6d3233c14b00a0ffa86d75d030600",
+   "out": [
+    1
+   ]
+  }
+ ],
+ "deps": [],
+ "ram_mb": 30,
+ "lazy_load": true,
+ "routes": [
+  "photo_input",
+  "cutout"
+ ],
+ "runtime": {
+  "cpu_ms": 14,
+  "params_m": 0.99,
+  "size_mb": 4.1
+ },
+ "accuracy": {
+  "iou_vs_teacher": 0.726,
+  "iou_vs_u2net": 0.69,
+  "soft_edge_pct": 16.9,
+  "note": "同域60张:IoU超u2net+3.6pt,软边15.8倍;域=复杂背景"
+ }
+}
