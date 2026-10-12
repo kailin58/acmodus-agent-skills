@@ -1,0 +1,1 @@
+[{"backbone": "mbv3s", "feat_dim": 1000, "probe_acc": 0.947, "gpu_ms": 8.0, "params_m": 2.5}, {"backbone": "resnet18", "feat_dim": 512, "probe_acc": 0.963, "gpu_ms": 3.6, "params_m": 11.2}, {"backbone": "enb3", "feat_dim": 38400, "probe_acc": 0.937, "gpu_ms": 19.1, "params_m": 10.7}]
