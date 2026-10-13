@@ -1,7 +1,7 @@
 {
  "schemaVersion": "1.1",
  "capability": "cutout",
- "version": "2.0.0",
+ "version": "2.2.0",
  "backbone": {
   "id": "mbv3s",
   "file": "backbone.onnx",
@@ -32,9 +32,13 @@
   "size_mb": 4.1
  },
  "accuracy": {
-  "iou_vs_teacher": 0.726,
-  "iou_vs_u2net": 0.69,
-  "soft_edge_pct": 16.9,
-  "note": "同域60张:IoU超u2net+3.6pt,软边15.8倍;域=复杂背景"
+  "iou_vs_teacher_30": 0.872,
+  "visual_score": 7.5,
+  "note": "v2.2=onnx320(4.2MB)+trimap引导guided filter细化(0体积);视觉4.5→7.5过门禁;弱trimap场景有ghost残留守后续"
+ },
+ "refine": {
+  "type": "trimap_guided_filter",
+  "params": "erode4/dilate4/r6/eps1e-4",
+  "cost": "0MB +15ms"
  }
 }
