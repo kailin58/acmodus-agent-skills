@@ -87,3 +87,12 @@ Jev×RWKV官方依据:
 ·官方量化配方:FFN/LM头int8+循环投影fp16(delta规则精度敏感)
 机型分档:T1=1.5B/T2=0.4B/T3=0.19B(4bit)
 验收新增:红线机tok/s≥16(A76对标)/状态内存≤50MB
+
+
+## v0.8修订(10-14官方repo RWKV-LM深度解读)
+1.许可双确认:Apache-2.0+Linux Foundation AI=商用最宽松✓
+2.核心概念:RWKV-7=meta-in-context learner(test-time-training,每token对状态做上下文内梯度下降)=用户习惯自适应的理论基础;RWKV-8路线已公布可平滑升级
+3.全工具链官方齐:train_temp参考实现(1GPU 7G显存=3060Ti可训!)/RWKV-PEFT微调(9G微调7B=我们8G微调1.5B余量足)/rwkv-mobile(GGUF+安卓iOS部署)/Albatross推理
+4.训练稳定性:RWKV-7无loss尖峰(0.1/0.4/1.5/2.9B全验证)
+5.多模态官方格式:[TxtFirst][Desc][Img]=拍照→穿搭意图输入对齐
+落地路径:本地3060Ti训练→PEFT九ID微调→rwkv-mobile端侧
