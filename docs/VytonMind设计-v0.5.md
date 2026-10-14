@@ -72,3 +72,18 @@
 4.验收指标新增:
  - hack率=0(硬性)
  - OOD ECE<0.10(ID仍<0.05)
+
+
+## v0.7修订(10-14深度调研官网数据)
+基座定案:RWKV-7 Goose(Linux Foundation AI,商用免费✓)
+官网硬数据:
+·iPhone17Pro 1.5B=25.2tok/s(O(1)内存无KV缓存,gated127/127)
+·ARM A76(中端安卓)7B=16.39tok/s | 骁龙X Elite=28.7tok/s
+·4bit 0.1B跑单片机(T3老机有解)
+·RWKV-7 2.9B=多语言3B SoTA(超Qwen2.5/Llama3.2,训练token仅1/3)
+Jev×RWKV官方依据:
+·RWKV输出=65536维token分布→CREDO式分布读置信天然可行(状态固定,读取不受上下文膨胀干扰)
+·官方RWKV-7 G1纯RNN推理模型已发布=推理+置信先例
+·官方量化配方:FFN/LM头int8+循环投影fp16(delta规则精度敏感)
+机型分档:T1=1.5B/T2=0.4B/T3=0.19B(4bit)
+验收新增:红线机tok/s≥16(A76对标)/状态内存≤50MB
