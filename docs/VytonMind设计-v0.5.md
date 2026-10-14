@@ -96,3 +96,11 @@ Jev×RWKV官方依据:
 4.训练稳定性:RWKV-7无loss尖峰(0.1/0.4/1.5/2.9B全验证)
 5.多模态官方格式:[TxtFirst][Desc][Img]=拍照→穿搭意图输入对齐
 落地路径:本地3060Ti训练→PEFT九ID微调→rwkv-mobile端侧
+
+
+## v0.9修订(10-14 Jev官网typesafe.ai深度调研)
+Jev真身:TypeSafe AI(Diogo Almeida=前OpenAI ChatGPT研究负责人)的"System One Model"(名源卡尼曼《思考快与慢》;Jev=经济学家Jevons)。
+官方数据:70-500ms端到端(快前沿LLM 40-200倍)/$0.042/MTok输出免费(省193-444x)/并行采样/类型安全零错误(数学保证)/不幻觉。
+RLCD官方=TypeSafe原创"Reinforcement Learning for Calibrated Decisions"——生产级验证路线。
+第三方实测(alphaxiv):Jev置信分离0.073→0.166真实但弱;错答置信0.56-0.58不降="自信地错"——正好被我们v0.6的CREDO可微读取+不可hack奖励补上=差异化专利点清晰。
+System One哲学(快速结构化决策+软件直接消费)与VytonMind意图中枢定位同构=官方背书。
