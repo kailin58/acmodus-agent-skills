@@ -1,0 +1,20 @@
+{
+ "pairs": 14,
+ "detail": [
+  "hi_000.png",
+  "hi_001.png",
+  "hi_002.png",
+  "hi_003.png",
+  "hi_004.png",
+  "hi_005.png",
+  "hi_006.png",
+  "hi_007.png",
+  "hi_008.png",
+  "hi_009.png",
+  "hi_010.png",
+  "hi_011.png",
+  "hi_012.png",
+  "hi_013.png"
+ ],
+ "规格": "2048×2048统一LANCZOS→basis-lz qlevel60→ktx extract解码=lo;修复:train双线性/eval不一致+512小图无可学损失两大设计缺陷"
+}
