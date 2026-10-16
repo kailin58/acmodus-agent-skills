@@ -1,0 +1,18 @@
+{
+ "board_imgs": {
+  "total": 2127,
+  "grade": "bronze"
+ },
+ "cut_train": {
+  "total": 6146,
+  "grade": "gold"
+ },
+ "mt": {
+  "total": 718,
+  "grade": "gold"
+ },
+ "hand": {
+  "total": 5657,
+  "grade": "gold"
+ }
+}
