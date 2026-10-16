@@ -1,0 +1,8 @@
+{
+ "教师": "PSGAN CVPR20 MIT",
+ "云端复现": "7坑全修(torchgpipe/VGG/dlib/fvcore/np.float/PIL/embedding)",
+ "伪标签": "148张90秒",
+ "vision": "5.5/10(身份8/妆效4.5)",
+ "四标尺终局": "SD15=4.5/IPA=6/PSGAN=5.5/v16=6全卡6分档",
+ "10+路径": "PSGAN-MT微调/CVPR26新模型/PSGAN+v16集成"
+}
