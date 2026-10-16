@@ -1,0 +1,1 @@
+{"int8_kb": 1057, "feat_rel_err_pct": 101.47136449813843, "verdict": "FAIL仍超", "attempt1": "动态per-channel无校准=101%误差(更糟,量化器警告需pre-process)", "体积": "3630KB→1057KB(3.4x)"}
