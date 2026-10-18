@@ -199,3 +199,9 @@
 - 分布内9:蓝/紫高彩度眼影接近教师parity(v29欠强度已修);残留=极浓smoky row1
 - held-out 8:0塌缩,眼妆强化泛化到未见脸(1/5/6行真实眼影迁移)
 - 挂账:低对比参考under-strength(2/4/7行)=强度归一化方向;浓眼线专属floor;gems超范围
+
+## 10-19凌晨 换装v26=PROMOTE 8.7/10(彩色纹理修复)
+- v25配方+chroma色度loss 0.15+HF 0.12→0.18+v25热启90ep(35s/ep)
+- 4/6行胜2平0负: leopard 8.2→8.8最大margin(暖ochre地色恢复);lavender/blue/red全胜
+- 副作用=条纹moiré微shimmer(Row3/6)+镜面高光微halo——挂账v27=pattern-aware loss修
+- v25 8.3 → v26 8.7;commit待导出onnx后一并
