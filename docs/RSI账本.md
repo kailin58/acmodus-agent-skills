@@ -100,3 +100,11 @@
 - 精度: INT8 mean-abs-diff 0.0085(视觉安全)
 - 端侧结论: 用ONNX fp32(25ms@CPU桌面级) 手机端预计100-300ms级可接受; NPU路线待真机(CoreML/NNAPI)再定
 - RSI: INT8不是免费午餐——0.5M以下小模型动态量化会因算子搬运变慢,必须实测
+
+## 10-18 全模块端侧包账本(3060Ti主机CPU实测)
+- 化妆v28: 0.36M/ONNX 1.44MB/CPU 25ms;landmarker 3.7MB;INT8反慢弃(0.39MB但542ms)
+- 换装v24: 1.33M/ONNX 5.4MB/CPU PyTorch 69ms(ORT 240ms=算子调度开销,PyTorch部署更优)
+- 抠图cut_v2: 两件套backbone320 3.72MB+head 0.24MB(≈4MB)+INT8版1.24MB在pack
+- 穿搭v16: keys=back.features(mobilenet系)582键,四头架构,待导出
+- 总核心已量化部分≈10.8MB(化妆+换装+抠图),500MB预算占用<2.2%——大头仍是3D资产/换脸/宠物
+- RSI: ORT对小模型不一定比PyTorch快(v24: 69→240ms),端侧部署框架选型要实测
