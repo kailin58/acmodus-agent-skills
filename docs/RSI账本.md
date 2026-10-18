@@ -157,3 +157,10 @@
 - core 42项终极测试重验: PASS 16 FAIL 0(全绿)
 - '走还是不走'1条漏(否定+肯定同句,规则极限); 5条场景条件句(如果下雨就.../除非...)留置信层
 - v1.2状态: 全量回归过+core绿→**可切现役**(待App侧联测一句知会,协作仓通知范本已备)
+
+## 10-18晚 云端SDXL换装教师600张重产完成(第6朵,~¥35/4h)
+- 与10-06那次的差异: 这次下载验证齐才关机(600/600✓, 684MB tar落地)
+- 位置: B:/mode/models/vton_training/sdxl_teacher_v2/ (1024px, img2img strength0.42保结构+毛孔prompt)
+- 价值: 换装学生数据3.5倍(tv3只有100张)——对标化妆v26→v28的数据跃迁路径
+- 云端坑补: diffusers新版需torch2.4+(torch.accelerator)→钉0.31; transformers钉4.44.2(FLAX_WEIGHTS_NAME)
+- 下步: v25换装学生=SDXL教师600张训练(320px, 跑v24同款管线)
