@@ -108,3 +108,10 @@
 - 穿搭v16: keys=back.features(mobilenet系)582键,四头架构,待导出
 - 总核心已量化部分≈10.8MB(化妆+换装+抠图),500MB预算占用<2.2%——大头仍是3D资产/换脸/宠物
 - RSI: ORT对小模型不一定比PyTorch快(v24: 69→240ms),端侧部署框架选型要实测
+
+## 10-18晚 穿搭v16端侧导出+全核心四件套齐
+- style v16: EfficientNet-B3 12.29M参数, ONNX 42.9MB(最大件!), CPU 38ms(PyTorch)/102ms(ORT)
+- 头维度实证: cat9/col12/sty8/sce6(col是12不是11,以权重为准)
+- 端侧核心四件套终账: 化妆1.44+换装5.4+抠图4.0+穿搭42.9=53.7MB(500MB的10.7%)
+- 穿搭42.9MB偏大→候选: EfficientNet-B3→B0蒸馏(~20MB)或INT8静态量化(B3属中等模型,INT8可能有效,需实测——v28小模型反慢教训不适用于B3)
+- 全部包位置: B:/mode/models/pack_all/ + cut/pack/
