@@ -205,3 +205,8 @@
 - 4/6行胜2平0负: leopard 8.2→8.8最大margin(暖ochre地色恢复);lavender/blue/red全胜
 - 副作用=条纹moiré微shimmer(Row3/6)+镜面高光微halo——挂账v27=pattern-aware loss修
 - v25 8.3 → v26 8.7;commit待导出onnx后一并
+
+## 10-19晨 端侧重导出(v26/v30晋版)
+- 化妆v30 onnx: 1.44MB/24ms(INT8 0.39MB但563ms=INT8小模型反慢实证复现,采纳fp32)——与v28同规格
+- 换装v26 onnx: 5.36MB/193ms CPU(1.33M参数;INT8 1.4MB但1352ms同反慢)——四件套延迟69ms→193ms系320px更大尺寸+320px
+- 四件套现: 化妆1.44+换装5.36+抠图4.0+穿搭42.9=53.7MB不变
