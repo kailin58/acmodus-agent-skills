@@ -332,3 +332,7 @@
 ## 10-19午 端侧全链延迟实测(化妆v30.2)
 - full-chain: onnx 25ms+landmark预处理68ms=93ms/张(拍照<2s铁律余量22x)
 - landmark占73%=预处理主导;真机NPU上onnx再降,landmark可用GPU delegate
+
+## 10-19午 换装端侧全链实测
+- v27.1: 预处理94ms+onnx 425ms(1024px源图)=519ms/张;拍照<2s余量3.9x
+- onnx占82%(320px大图+6ch);真机NPU可期降至<150ms;挂账: 320→256px降采样版测精度差
