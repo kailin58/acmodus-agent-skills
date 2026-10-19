@@ -1,0 +1,47 @@
+{
+ "makeup": {
+  "file": "glow_v302.onnx",
+  "src": "B:/mode/models/glow/pack/glow_v302.onnx",
+  "inputs": [
+   "src",
+   "ref",
+   "patch_eye",
+   "patch_lip",
+   "sref"
+  ],
+  "size_mb": 10.1,
+  "latency_ms": 25,
+  "version": "v30.2",
+  "score": "in-dist 9 / held-out 9.2"
+ },
+ "vton": {
+  "file": "vton_v271.onnx",
+  "src": "B:/mode/models/pack/vton_v271.onnx",
+  "inputs": [
+   "cond"
+  ],
+  "size_mb": 5.11,
+  "latency_ms": 66,
+  "version": "v27.1",
+  "score": "9.3"
+ },
+ "cutout": {
+  "file": "backbone320.onnx+head320.onnx",
+  "src": "B:/mode/models/cut/pack/capability_cutout_v2",
+  "size_mb": 4.0,
+  "latency_ms": 15,
+  "version": "cut_v2.1"
+ },
+ "breed": {
+  "file": "breed_v3_mobile.onnx",
+  "src": "B:/mode/models/pet/breed_v3_mobile.onnx",
+  "inputs": [
+   "img"
+  ],
+  "size_mb": 17.4,
+  "latency_ms": 1.1,
+  "version": "v3",
+  "acc": "71.27%"
+ },
+ "_total_mb": 36.6
+}
