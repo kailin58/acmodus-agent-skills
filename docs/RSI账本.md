@@ -328,3 +328,7 @@
 ## 10-19午 ⑤抠图回归加固通过
 - backbone320+head320: 20张连测20/20 ok,15ms/张,mask形状正确
 - ⑤100%状态复确认(四件套62MB阵容下零回归)
+
+## 10-19午 端侧全链延迟实测(化妆v30.2)
+- full-chain: onnx 25ms+landmark预处理68ms=93ms/张(拍照<2s铁律余量22x)
+- landmark占73%=预处理主导;真机NPU上onnx再降,landmark可用GPU delegate
