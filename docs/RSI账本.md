@@ -414,3 +414,10 @@
 - 换装v33：新源图有效(359→794)，v31(缓存降质)/v32(同源seed)双负 → 扩产必须换源
 - App侧要点：GB/T 10000-2023(新增上臂围/大腿围)+26158+1335；形状量(胸厚/肩斜/臀突/罩杯)国标没有，必须两步拍摄+自报
 - 合规：不做医疗诊断(diagnostic=False)；CAESAR禁商用；ANSUR II人群不符仅算法验证；国标只引用统计值
+
+## 10-21 换装 v33 入包（端侧现役）
+- manifest: models/pack_all/manifest.json vton -> vton_v33.onnx (5.36MB, ONNX CPU 4线程 241.1ms, torch 321.8ms)
+- 数值一致性: max|torch-onnx| = 1.4e-5 (PASS)
+- 四件套合计 36.9MB（500MB 红线 7.4%）
+- **预处理口径变更**: 上62%crop→1024→中心640窗→320（比v27.1紧1.6x），App 不同步会掉分
+- 回滚: 保留 vton_v271.onnx，manifest 切回即可
